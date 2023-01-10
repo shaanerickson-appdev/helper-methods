@@ -1,0 +1,55 @@
+<div>
+  <h1>
+    Theater #<%= @theater.id %> details
+  </h1>
+  
+  <div>
+    <div>
+      <%= link_to "Go back", theaters_path %>
+    </div>
+    <div>
+      <%= link_to "Edit movie", edit_theater_path(@theater) %>
+    </div>
+    <div>
+      <%= link_to "Delete movie", theater_path(@theater), method: :delete %>
+    </div>
+  </div>
+  
+  <dl>
+    <dt>
+      Name
+    </dt>
+    <dd>
+      <%= @theater.name %>
+    </dd>
+
+    <dt>
+      Capacity
+    </dt>
+    <dd>
+      <%= @theater.capacity %>
+    </dd>
+
+    <dt>
+      Screens
+    </dt>
+    <dd>
+      <%= @theater.screens %>
+    </dd>
+
+    <dt>
+      Created at
+    </dt>
+    <dd>
+      <%= time_ago_in_words(@theater.created_at) %> ago
+    </dd>
+
+    <dt>
+      Updated at
+    </dt>
+    <dd>
+      <%= time_ago_in_words(@theater.updated_at) %> ago
+    </dd>
+    
+  </dl>
+</div>

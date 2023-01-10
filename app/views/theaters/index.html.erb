@@ -1,0 +1,59 @@
+<h1>
+  List of all theaters
+</h1>
+
+<hr>
+
+<div>
+  <%= link_to "Add a new theater", new_theater_path %>
+</div>
+
+<hr>
+
+<table>
+  <tr>
+    <th>
+      Id
+    </th>
+    <th>
+      Name
+    </th>
+    <th>
+      Capacity
+    </th>
+    <th>
+      Screens
+    </th>
+    <th>
+      Created at
+    </th>
+    <th>
+      Updated at
+    </th>
+  </tr>
+  <% @theaters.each do |theater| %>
+    <tr>
+      <td>
+        <%= theater.id %>
+      </td>
+      <td>
+        <%= theater.name %>
+      </td>
+      <td>
+        <%= theater.capacity %>
+      </td>
+      <td>
+        <%= theater.screens %>
+      </td>
+      <td>
+        <%= time_ago_in_words(theater.created_at) %> ago
+      </td>
+      <td>
+        <%= time_ago_in_words(theater.updated_at) %> ago
+      </td>
+      <td>
+        <%= link_to "Show details", theater %>
+      </td>
+    </tr>
+  <% end %>
+</table>

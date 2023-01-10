@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   # Routes for the Movie resource:
 
+  resources :theaters
+
   # CREATE
   post "/movies" => "movies#create", as: :movies
   get "/movies/new" => "movies#new", as: :new_movie

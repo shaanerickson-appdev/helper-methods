@@ -1,0 +1,22 @@
+<div>
+  <div>
+    <h1>
+      Edit theater
+    </h1>
+  </div>
+  <%= form_with(model: @theater, method: :patch) do |form| %>
+    <div>
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+    <div>
+      <%= form.label :capacity %>
+      <%= form.number_field :capacity %>
+    </div>
+    <div>
+      <%= form.label :screens %>
+      <%= form.number_field :screens %>
+    </div>
+    <%= form.button %>
+  <% end %>
+</div>

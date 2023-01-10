@@ -1,0 +1,23 @@
+<h1>
+  New Theater
+</h1>
+
+<% @theater.errors.full_messages.each do |message| %>
+  <p style="color: red;"><%= message %></p>
+<% end %>
+
+<%= form_with(model: @theater) do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :capacity %>
+    <%= form.number_field :capacity %>
+  </div>
+  <div>
+    <%= form.label :screens %>
+    <%= form.number_field :screens %>
+  </div>
+  <%= form.button %>
+<% end %>
